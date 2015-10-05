@@ -17,9 +17,9 @@ namespace ScoreBoard.Core.DAL
 		{
 			_storagePath = storagePath;
             _fileHandler = fileHandler;
+
             // create the storage path if it does not exist
-            //if (!Directory.Exists(_storagePath))
-            //Directory.CreateDirectory(_storagePath);
+            fileHandler.CreatePathIfNotExist(storagePath);
 
             RefreshCache ();
 		}

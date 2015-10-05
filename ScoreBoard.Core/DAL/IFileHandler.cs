@@ -9,6 +9,7 @@ namespace ScoreBoard.Core.DAL
 		void WriteAllText (string filename, string content);
         void DeleteFile(string filename);
         string[] GetFileSet(string _storagePath);
+        void CreatePathIfNotExist(string _storagePath);
     }
 }
 

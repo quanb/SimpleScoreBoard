@@ -45,10 +45,16 @@ namespace ScoreBoard.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int ic_new = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int monoandroidsplash = 2130837505;
+			public const int ic_refresh = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int monoandroidsplash = 2130837507;
 			
 			static Drawable()
 			{
@@ -63,11 +69,17 @@ namespace ScoreBoard.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int gameListView = 2131099649;
+			// aapt resource value: 0x7f070002
+			public const int actionNew = 2131165186;
 			
-			// aapt resource value: 0x7f060000
-			public const int nameTextView = 2131099648;
+			// aapt resource value: 0x7f070003
+			public const int actionRefresh = 2131165187;
+			
+			// aapt resource value: 0x7f070001
+			public const int gameListView = 2131165185;
+			
+			// aapt resource value: 0x7f070000
+			public const int nameTextView = 2131165184;
 			
 			static Id()
 			{
@@ -94,6 +106,22 @@ namespace ScoreBoard.Droid
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int GamesListViewMenu = 2131099648;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

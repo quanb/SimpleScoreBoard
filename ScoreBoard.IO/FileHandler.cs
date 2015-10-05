@@ -37,6 +37,12 @@ namespace ScoreBoard.IO
         {
             return Directory.GetFiles(_storagePath, "*.json");
         }
+
+        public void CreatePathIfNotExist(string _storagePath)
+        {
+            if (!Directory.Exists(_storagePath))
+                Directory.CreateDirectory(_storagePath);
+        }
         #endregion
     }
 }

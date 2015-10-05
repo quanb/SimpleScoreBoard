@@ -50,9 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GamesActivity.cs" />
+    <Compile Include="..\ScoreBoard.IO\FileHandler.cs">
+      <Link>Util\FileHandler.cs</Link>
+    </Compile>
+    <Compile Include="Activity\GamesActivity.cs" />
     <Compile Include="GameData.cs" />
-    <Compile Include="GameListViewAdapter.cs" />
+    <Compile Include="Activity\Adapter\GameListViewAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,6 +82,15 @@
       <Project>{4ef90147-9a05-4fb4-bcde-330e1e02eb8c}</Project>
       <Name>ScoreBoard.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\GamesListViewMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
