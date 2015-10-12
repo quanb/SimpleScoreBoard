@@ -35,7 +35,7 @@ namespace ScoreBoard.IO
 
         public string[] GetFileSet(string _storagePath)
         {
-            return Directory.GetFiles(_storagePath, "*.json");
+            return Directory.GetFiles(_storagePath, "*game.json");
         }
 
         public void CreatePathIfNotExist(string _storagePath)

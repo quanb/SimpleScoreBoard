@@ -44,6 +44,7 @@
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.Collections" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime" />
     <Reference Include="System.Xml.Linq" />
@@ -53,9 +54,14 @@
     <Compile Include="..\ScoreBoard.IO\FileHandler.cs">
       <Link>Util\FileHandler.cs</Link>
     </Compile>
+    <Compile Include="Activity\Adapter\GameAddAttendeeAdapter.cs" />
+    <Compile Include="Activity\Adapter\PlayersListViewAdapter.cs" />
+    <Compile Include="Activity\GameAddAttendeeActivity.cs" />
+    <Compile Include="Activity\PlayersActivity.cs" />
     <Compile Include="Activity\GamesActivity.cs" />
     <Compile Include="GameData.cs" />
     <Compile Include="Activity\Adapter\GameListViewAdapter.cs" />
+    <Compile Include="Activity\MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +70,17 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\GameListItem.axml" />
+    <AndroidResource Include="Resources\layout\Main.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Players.axml" />
+    <AndroidResource Include="Resources\layout\PlayerListItem.axml" />
+    <AndroidResource Include="Resources\layout\GameAddAttendee.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GameAddAttendeeItem.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Games.axml" />

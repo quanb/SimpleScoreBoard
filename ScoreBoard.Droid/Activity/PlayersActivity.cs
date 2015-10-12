@@ -6,25 +6,26 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using ScoreBoard.Core.Entity;
+using System.Collections.Generic;
 
 namespace ScoreBoard.Droid
 {
     [Activity(Label = "ScoreBoard")]
-    public class GamesActivity : Activity
+    public class PlayersActivity : Activity
     {
-        ListView _gameListView;
-        GameListViewAdapter _adapter;
+        ListView _playersListView;
+        PlayersListViewAdapter _adapter;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             // Set our view from the "games" layout resource
-            SetContentView(Resource.Layout.Games);
+            SetContentView(Resource.Layout.Players);
 
-            _gameListView = FindViewById<ListView>(Resource.Id.gameListView);
-            _adapter = new GameListViewAdapter(this);
-            _gameListView.Adapter = _adapter;
+            _playersListView = FindViewById<ListView>(Resource.Id.playerListView);
+            _adapter = new PlayersListViewAdapter(this);
+            _playersListView.Adapter = _adapter;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -38,20 +39,19 @@ namespace ScoreBoard.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.actionNew:
-                    string default_game_name = "Game";
+                    string default_game_name = "Player";
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     EditText input = new EditText(this);
                     input.Text = default_game_name;
-                    alert1.SetTitle("Game Name");
+                    alert1.SetTitle("Player Name");
                     alert1.SetView(input);
-                    alert1.SetPositiveButton("OK", delegate { AddGame(input.Text); });
+                    alert1.SetPositiveButton("OK", delegate { AddPlayer(input.Text); });
                     alert1.SetNegativeButton("Cancel", (s, e) => { });
                     alert1.Show();
-
                     return true;
 
                 case Resource.Id.actionRefresh:
-                    GameData.Service.RefreshCache();
+                    GameData.PlayerService.RefreshCache();
                     _adapter.NotifyDataSetChanged();
                     return true;
 
@@ -60,21 +60,14 @@ namespace ScoreBoard.Droid
             }
         }
 
-        protected void AddGame(string gameName)
+        protected void AddPlayer(string playerName)
         {
-            //Game game = new Game();
-            //if(string.IsNullOrWhiteSpace(gameName))
-            //    game.Name = "Game";
-            //else
-            //    game.Name = gameName;
-            //GameData.Service.SaveGame(game);
-            if (string.IsNullOrWhiteSpace(gameName))
-                gameName = "Game";
-
-            Intent participants = new Intent(this, typeof(GameAddAttendeeActivity));
-            participants.PutExtra("game_name", gameName);
-            participants.PutExtra("listType", "players");
-            StartActivity(participants);
+            Player player = new Player();
+            if(string.IsNullOrWhiteSpace(playerName))
+                player.Name = "Player";
+            else
+                player.Name = playerName;
+            GameData.PlayerService.SavePlayer(player);
         }
     }
 

@@ -47,7 +47,7 @@ namespace ScoreBoard.Core.DAL
 
 		private string GetFilename(int id)
 		{
-			return Path.Combine (_storagePath, "game" + id.ToString () + ".json");
+			return Path.Combine (_storagePath, id.ToString() + "game" + ".json");
 		}
 
 		public void SaveGame(Game game)

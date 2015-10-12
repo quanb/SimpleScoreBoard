@@ -34,9 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DAL\PlayerJsonService.cs" />
+    <Compile Include="DAL\IGameDataService.cs" />
+    <Compile Include="Entity\GamePlayer.cs" />
+    <Compile Include="Entity\Player.cs" />
     <Compile Include="Fake\FakeGameService.cs" />
     <Compile Include="DAL\IFileHandler.cs" />
-    <Compile Include="DAL\IGameDataService.cs" />
+    <Compile Include="DAL\IPlayerDataService.cs" />
     <Compile Include="DAL\GameJsonService.cs" />
     <Compile Include="Entity\Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
