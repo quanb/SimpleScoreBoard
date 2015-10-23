@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.4.87</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -55,8 +55,11 @@
       <Link>Util\FileHandler.cs</Link>
     </Compile>
     <Compile Include="Activity\Adapter\GameAddAttendeeAdapter.cs" />
+    <Compile Include="Activity\Adapter\GameViewAdapter.cs" />
     <Compile Include="Activity\Adapter\PlayersListViewAdapter.cs" />
+    <Compile Include="Activity\AddPointDialog.cs" />
     <Compile Include="Activity\GameAddAttendeeActivity.cs" />
+    <Compile Include="Activity\GameActivity.cs" />
     <Compile Include="Activity\PlayersActivity.cs" />
     <Compile Include="Activity\GamesActivity.cs" />
     <Compile Include="GameData.cs" />
@@ -81,6 +84,9 @@
     <AndroidResource Include="Resources\layout\GameAddAttendeeItem.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddPoint.axml" />
+    <AndroidResource Include="Resources\layout\Game.axml" />
+    <AndroidResource Include="Resources\layout\GameItem.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Games.axml" />
@@ -108,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Activity\Dialog\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

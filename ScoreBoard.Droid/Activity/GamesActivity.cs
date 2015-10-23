@@ -25,6 +25,7 @@ namespace ScoreBoard.Droid
             _gameListView = FindViewById<ListView>(Resource.Id.gameListView);
             _adapter = new GameListViewAdapter(this);
             _gameListView.Adapter = _adapter;
+            _gameListView.ItemClick += GameClicked;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -47,7 +48,7 @@ namespace ScoreBoard.Droid
                     alert1.SetPositiveButton("OK", delegate { AddGame(input.Text); });
                     alert1.SetNegativeButton("Cancel", (s, e) => { });
                     alert1.Show();
-
+                    _adapter.NotifyDataSetChanged();
                     return true;
 
                 case Resource.Id.actionRefresh:
@@ -76,8 +77,14 @@ namespace ScoreBoard.Droid
             participants.PutExtra("listType", "players");
             StartActivity(participants);
         }
-    }
 
-    
+        protected void GameClicked(object sender, ListView.ItemClickEventArgs e)
+        {
+            // setup the intent to pass 
+            Intent gameIntent = new Intent(this, typeof(GameActivity));
+            gameIntent.PutExtra("game_id", (int)e.Id);
+            StartActivity(gameIntent);
+        }
+    }
 }
 

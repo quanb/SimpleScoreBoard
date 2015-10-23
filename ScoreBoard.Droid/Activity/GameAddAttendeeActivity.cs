@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace ScoreBoard.Droid
 {
-    [Activity(Label = "ScoreBoard")]
+    [Activity(Label = "ScoreBoard", NoHistory = true)]
     public class GameAddAttendeeActivity : Activity
     {
         ListView _playersListView;
@@ -32,52 +32,50 @@ namespace ScoreBoard.Droid
                 
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.GamesListViewMenu, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
+        //    MenuInflater.Inflate(Resource.Menu.GamesListViewMenu, menu);
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.actionNew:
-                    string default_game_name = "Player";
-                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
-                    EditText input = new EditText(this);
-                    input.Text = default_game_name;
-                    alert1.SetTitle("Player Name");
-                    alert1.SetView(input);
-                    alert1.SetPositiveButton("OK", delegate { AddPlayer(input.Text); });
-                    alert1.SetNegativeButton("Cancel", (s, e) => { });
-                    alert1.Show();
-                    return true;
+        //public override bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    switch (item.ItemId)
+        //    {
+        //        case Resource.Id.actionNew:
+        //            string default_game_name = "Player";
+        //            AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+        //            EditText input = new EditText(this);
+        //            input.Text = default_game_name;
+        //            alert1.SetTitle("Player Name");
+        //            alert1.SetView(input);
+        //            alert1.SetPositiveButton("OK", delegate { AddPlayer(input.Text); });
+        //            alert1.SetNegativeButton("Cancel", (s, e) => { });
+        //            alert1.Show();
+        //            return true;
 
-                case Resource.Id.actionRefresh:
-                    GameData.PlayerService.RefreshCache();
-                    _adapter.NotifyDataSetChanged();
-                    return true;
+        //        case Resource.Id.actionRefresh:
+        //            GameData.PlayerService.RefreshCache();
+        //            _adapter.NotifyDataSetChanged();
+        //            return true;
 
-                default:
-                    return base.OnOptionsItemSelected(item);
-            }
-        }
+        //        default:
+        //            return base.OnOptionsItemSelected(item);
+        //    }
+        //}
 
-        protected void AddPlayer(string playerName)
-        {
-            Player player = new Player();
-            if(string.IsNullOrWhiteSpace(playerName))
-                player.Name = "Player";
-            else
-                player.Name = playerName;
-            GameData.PlayerService.SavePlayer(player);
-        }
+        //protected void AddPlayer(string playerName)
+        //{
+        //    Player player = new Player();
+        //    if(string.IsNullOrWhiteSpace(playerName))
+        //        player.Name = "Player";
+        //    else
+        //        player.Name = playerName;
+        //    GameData.PlayerService.SavePlayer(player);
+        //}
 
         protected void SaveGameAndPlayer()
         {
-            Bundle extras = Intent.Extras;
-
             // Create an array to store player into
             List<GamePlayer> attendees = new List<GamePlayer>();
             int listItemCount = _playersListView.ChildCount;
@@ -89,7 +87,7 @@ namespace ScoreBoard.Droid
                     attendees.Add(new GamePlayer()
                     {
                         PlayerId = (int)GameData.PlayerService.Players[i].Id,
-                        PlayerAlias = "",
+                        PlayerAlias = GameData.PlayerService.Players[i].Name,
                         Score = 0
                     });
                 }
@@ -100,7 +98,10 @@ namespace ScoreBoard.Droid
                 Players = attendees
             };
             GameData.Service.SaveGame(game);
-            StartActivity(typeof(GamesActivity));
+            //StartActivity(typeof(GamesActivity));
+            Intent gameIntent = new Intent(this, typeof(GameActivity));
+            gameIntent.PutExtra("game_id", (int)game.Id);
+            StartActivity(gameIntent);
         }
     }
 

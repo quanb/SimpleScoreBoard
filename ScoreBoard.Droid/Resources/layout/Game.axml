@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="25sp"
+        android:background="#000000"
+        android:gravity="left|center_vertical"
+        android:paddingRight="5sp">
+        <TextView
+            android:id="@+id/gameTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="TODO: GAME NAME HERE"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical|center_horizontal" />
+    </RelativeLayout>
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gamePlayerListView" />
+</LinearLayout>
