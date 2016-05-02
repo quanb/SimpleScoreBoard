@@ -41,6 +41,7 @@ namespace ScoreBoard.Droid
                     StartActivity(typeof(PlayersActivity));
                     break;
                 case "Games":
+                    //StartActivity(typeof(GamesListActivity));
                     StartActivity(typeof(GamesActivity));
                     break;
                 default:

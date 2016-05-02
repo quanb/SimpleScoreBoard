@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v4.4.87</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -58,8 +58,10 @@
     <Compile Include="Activity\Adapter\GameViewAdapter.cs" />
     <Compile Include="Activity\Adapter\PlayersListViewAdapter.cs" />
     <Compile Include="Activity\AddPointDialog.cs" />
+    <Compile Include="Activity\Fragment\GamesFragment.cs" />
     <Compile Include="Activity\GameAddAttendeeActivity.cs" />
     <Compile Include="Activity\GameActivity.cs" />
+    <Compile Include="Activity\GamesListActivity.cs" />
     <Compile Include="Activity\PlayersActivity.cs" />
     <Compile Include="Activity\GamesActivity.cs" />
     <Compile Include="GameData.cs" />
@@ -87,6 +89,9 @@
     <AndroidResource Include="Resources\layout\AddPoint.axml" />
     <AndroidResource Include="Resources\layout\Game.axml" />
     <AndroidResource Include="Resources\layout\GameItem.axml" />
+    <AndroidResource Include="Resources\layout\NewGames.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Games.axml" />
