@@ -182,3 +182,5 @@ samples/.DS_Store
 *.userprefs
 *.jf
 
+ScoreBoard.Droid/ScoreBoard.Droid.csproj.bak
+ScoreBoard.Test/ScoreBoard.Test.csproj.bak

@@ -62,6 +62,7 @@
     <Compile Include="Activity\GameAddAttendeeActivity.cs" />
     <Compile Include="Activity\GameActivity.cs" />
     <Compile Include="Activity\GamesListActivity.cs" />
+    <Compile Include="Activity\NewMainActivity.cs" />
     <Compile Include="Activity\PlayersActivity.cs" />
     <Compile Include="Activity\GamesActivity.cs" />
     <Compile Include="GameData.cs" />
@@ -92,6 +93,7 @@
     <AndroidResource Include="Resources\layout\NewGames.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\action_bar.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Games.axml" />
@@ -122,6 +124,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Activity\Dialog\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_action_dial_pad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_action_favorite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_action_group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_action_phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\themes.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
