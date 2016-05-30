@@ -1,0 +1,13 @@
+﻿<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:myapp="http://schemas.android.com/apk/res-auto">
+
+  <item android:id="@+id/actionNew"
+    android:icon="@drawable/ic_new"
+    android:title="New"
+    myapp:showAsAction="ifRoom" />
+  <item android:id="@+id/actionRefresh"
+    android:icon="@drawable/ic_refresh"
+    android:title="Refresh"
+    myapp:showAsAction="ifRoom" />
+
+</menu>

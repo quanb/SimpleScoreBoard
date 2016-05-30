@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:myapp="http://schemas.android.com/apk/res-auto">
+  <item android:id="@+id/action_edit"
+        android:icon="@drawable/ic_action_edit"
+        android:title="Edit"
+        myapp:showAsAction="always"/>
+  
+  <item android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_action_favorite"
+        android:title="Favorite"
+        myapp:showAsAction="always"/>
+  
+  <item android:id="@+id/action_new"
+        android:icon="@drawable/ic_action_new"
+        android:title="New"
+        myapp:showAsAction="always"/>
+  
+  <item android:id="@+id/action_paste"
+        android:icon="@drawable/ic_action_paste"
+        android:title="Paste"
+        myapp:showAsAction="always"/>
+</menu>
